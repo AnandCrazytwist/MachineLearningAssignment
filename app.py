@@ -64,11 +64,11 @@ if uploaded_file is not None:
                 
             with col_cm:
                 st.write("### Confusion Matrix")
-                # Add descriptive labels and a blue color gradient
+                # Corrected labels: 0 is Malignant, 1 is Benign
                 cm = confusion_matrix(y_test, y_pred)
                 cm_df = pd.DataFrame(cm, 
-                                     index=['Actual 0 (Benign)', 'Actual 1 (Malignant)'], 
-                                     columns=['Predicted 0 (Benign)', 'Predicted 1 (Malignant)'])
+                                     index=['Actual 0 (Malignant)', 'Actual 1 (Benign)'], 
+                                     columns=['Predicted 0 (Malignant)', 'Predicted 1 (Benign)'])
                 st.dataframe(cm_df.style.background_gradient(cmap='Blues'), use_container_width=True)
                 
         else:
