@@ -57,11 +57,19 @@ if uploaded_file is not None:
             
             with col_rep:
                 st.write("### Classification Report")
-                st.text(classification_report(y_test, y_pred))
+                # Convert the report to a dictionary, then to a styled DataFrame
+                report_dict = classification_report(y_test, y_pred, output_dict=True)
+                report_df = pd.DataFrame(report_dict).transpose()
+                st.dataframe(report_df.style.format(precision=3), use_container_width=True)
                 
             with col_cm:
                 st.write("### Confusion Matrix")
-                st.dataframe(pd.DataFrame(confusion_matrix(y_test, y_pred)))
+                # Add descriptive labels and a blue color gradient
+                cm = confusion_matrix(y_test, y_pred)
+                cm_df = pd.DataFrame(cm, 
+                                     index=['Actual 0 (Benign)', 'Actual 1 (Malignant)'], 
+                                     columns=['Predicted 0 (Benign)', 'Predicted 1 (Malignant)'])
+                st.dataframe(cm_df.style.background_gradient(cmap='Blues'), use_container_width=True)
                 
         else:
             st.error(f"Model file {model_filename} not found in the 'model' directory.")
