@@ -11,7 +11,7 @@ To build and evaluate multiple machine learning classification models on a clini
 - **Target:** Binary (Malignant vs. Benign)
 
 **c. Github Repository Link**
-(https://github.com/AnandCrazytwist/MachineLearning/)
+(https://github.com/AnandCrazytwist/MachineLearningAssignment/)
 
 **d. Models used & Comparison Table**
 
