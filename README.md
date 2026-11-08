@@ -13,6 +13,8 @@ To build and evaluate multiple machine learning classification models on a clini
 **c. Github Repository Link**
 (https://github.com/AnandCrazytwist/MachineLearningAssignment/)
 
+streamlit link : https://machinelearningassignment-xkwljep3h3mfwmrbwtzqff.streamlit.app/
+
 **d. Models used & Comparison Table**
 
 
